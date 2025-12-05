@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Motion Surplus</title>
+        <link rel="icon" type="image/png" href="/src/MSIcon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Motion Surplus – Listen to what’s on rotation right now. Bag deep, thoughts deeper."
+        />
+
+        <link rel="stylesheet" href="/src/style.css" />
+
+        <!-- Optional Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <div class="page">
+            <!-- Main container -->
+            <main class="main">
+                <div class="container">
+                    <!-- Header / Hero -->
+                    <header class="hero hero-stacked">
+                        <img
+                            src="/src/MSIcon.png"
+                            alt="Motion Surplus Logo"
+                            class="site-logo"
+                        />
+
+                        <p class="hero-left-text hero-subtitle">
+                            Hand-picked tracks that loop in my headphones and
+                            spill onto the feed. Trying my best to keep this
+                            updated. Links to social media and playlists below!
+                        </p>
+
+                        <div class="hero-icons">
+                            <a
+                                href="https://instagram.com/motionsurplus"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src="/src/instagram.png"
+                                    alt="Instagram"
+                                    class="social-icon"
+                                />
+                            </a>
+
+                            <a
+                                href="https://open.spotify.com/user/31jk262vmo4d7fy7ffbn6bh4fgg4?si=oMJ2Jwz8R065ilyK1MAqDg"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src="/src/spotify.png"
+                                    alt="Spotify"
+                                    class="social-icon"
+                                />
+                            </a>
+
+                            <a
+                                href="https://soundcloud.com/gigabonch"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src="/src/soundcloud.png"
+                                    alt="Soundcloud"
+                                    class="social-icon"
+                                />
+                            </a>
+                        </div>
+                    </header>
+
+                    <!-- Content Sections -->
+                    <div class="sections-grid">
+                        <!-- Section 1: Current Rotation -->
+                        <section class="card">
+                            <h2 class="card-title">Current Rotation</h2>
+                            <p class="card-subtitle">
+                                Tracks I’m overplaying this week.
+                            </p>
+
+                            <!-- JS-injected list -->
+                            <ol
+                                id="currentRotation"
+                                class="song-list-numbered"
+                            ></ol>
+                        </section>
+
+                        <!-- Section 2: Timeless Favorites -->
+                        <section class="card">
+                            <h2 class="card-title">Timeless Favorites</h2>
+                            <p class="card-subtitle">
+                                Songs that stay in rotation, no matter the
+                                season.
+                            </p>
+
+                            <!-- JS-injected list -->
+                            <ul
+                                id="timelessFavorites"
+                                class="song-list-simple"
+                            ></ul>
+                        </section>
+                    </div>
+
+                    <!-- Playlist / embeds -->
+                    <section class="playlist-section">
+                        <h2 class="playlist-title">Playlists &amp; Mixes</h2>
+                        <p class="playlist-subtitle">
+                            From my personal collection. My Spotify has more
+                            playlists to check out. Thanks for looking!
+                        </p>
+
+                        <div class="playlist-frame-wrapper">
+                            <iframe
+                                style="border: 0"
+                                src="https://open.spotify.com/embed/playlist/6Vxo0vcey2Nou29Gvk0eOi?utm_source=generator&theme=0"
+                                width="100%"
+                                height="600"
+                                frameborder="0"
+                                allowfullscreen=""
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy"
+                            ></iframe>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-inner">
+                    <p class="footer-text">
+                        © <span id="year"></span> SixFifty
+                    </p>
+                    <p class="footer-text">Created and curated by Bonch.</p>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            // Set current year automatically
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+
+        <!-- Load song data (JSON → HTML) -->
+        <script type="module" src="/src/songs.js"></script>
+    </body>
+</html>

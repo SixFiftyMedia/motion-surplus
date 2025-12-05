@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+/* ---------- Theme variables ---------- */
+:root {
+    --color-dark-primary: #181818; /* Carbon Black | Site Background */
+    --color-dark-secondary: #232322; /* Jet Black | Card Background */
+    --color-highlight: #fc814a; /* Coral Glow | Title Text - Borders - Numbers */
+    --color-light: #eeeeee; /* Platinum | Text */
+}
+
+/* ---------- Base styles ---------- */
+body {
+    margin: 0;
+    font-family:
+        "Space Grotesk",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    background-color: var(--color-dark-primary);
+    color: var(--color-light);
+}
+
+/* ---------- Layout ---------- */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}
+
+.container {
+    max-width: 64rem; /* ~1024px */
+    margin: 0 auto;
+    padding: 2.5rem 1rem; /* 40px top/bottom, 16px sides */
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-left-title {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+    }
+    .hero-left-title {
+        font-size: 2.25rem; /* 36px */
+    }
+}
+
+.hero-left-text {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 32rem;
+    color: var(--color-light);
+}
+
+/* Stacked layout for hero */
+.hero-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem; /* spacing between logo → subtitle → button */
+    margin-bottom: 3rem;
+}
+
+.hero-stacked .site-logo {
+    width: 80px;
+}
+
+@media (min-width: 768px) {
+    .hero-stacked {
+        margin-bottom: 4rem;
+    }
+    .hero-stacked .site-logo {
+        width: 100px;
+    }
+}
+
+/* Center the subtitle */
+.hero-subtitle {
+    max-width: 32rem;
+}
+
+/* Instagram button centered */
+.hero-insta {
+    margin-top: 0.5rem;
+}
+
+.hero-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* ---------- Social Icons in Hero ---------- */
+.hero-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+
+/* hover effect */
+.social-icon:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .social-icon {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* ---------- Sections grid ---------- */
+.sections-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .sections-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+}
+
+/* ---------- Cards ---------- */
+.card {
+    border-radius: 1rem;
+    border: 1px solid var(--color-highlight);
+    background-color: var(--color-dark-secondary);
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.6);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+}
+
+.card-subtitle {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    color: var(--color-light);
+}
+
+/* ---------- Song lists ---------- */
+.song-list-numbered,
+.song-list-simple {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.song-list-numbered-item {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.song-index {
+    font-size: 0.75rem;
+    color: var(--color-highlight);
+    padding-top: 0.15rem;
+}
+
+.song-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.song-note {
+    margin: 0.15rem 0 0;
+    font-size: 0.75rem;
+    color: var(--color-light);
+}
+
+.song-list-simple-item {
+    margin-bottom: 0.9rem;
+}
+
+/* ---------- Playlist section ---------- */
+.playlist-section {
+    margin-top: 2.5rem;
+}
+
+.playlist-title {
+    margin: 0 0 0.25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.playlist-subtitle {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    color: var(--color-light);
+}
+
+.playlist-frame-wrapper {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--color-highlight);
+    background-color: var(--color-dark-primary);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    border-top: 1px solid var(--color-dark-secondary);
+    background-color: var(--color-bg);
+}
+
+.footer-inner {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .footer-inner {
+        flex-direction: row;
+    }
+}
+
+.site-logo {
+    width: 72px; /* adjust to taste */
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .site-logo {
+        width: 90px;
+    }
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: var(--color-light);
+}
